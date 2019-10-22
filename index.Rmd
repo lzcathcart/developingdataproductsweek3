@@ -1,0 +1,18 @@
+---
+title: "Developing Data Products - Week 3 Project"
+author: "LZC"
+date: "10/22/2019"
+output: html_document
+---
+
+### Instructions
+Create a web page presentation using R Markdown that features a plot created with Plotly.
+
+### Percentage of College Bound Students by Indiana Counties
+```{r, fig.width=12, fig.height=8,echo=FALSE, warning=FALSE, message=FALSE}
+                      
+library(plotly)
+indiana <- subset(midwest, midwest$state == "IN")
+indiana2 <- plot_ly(indiana, x = ~county, y = ~percollege, type = "scatter", color = ~percollege)
+indiana2
+```
